@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Paint App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="paint-app">
+
+        <header class="header">
+            <div>
+                <h1>Paint</h1>
+                <p>Simple HTML5 Canvas Drawing App</p>
+            </div>
+        </header>
+       
+        <div class="toolbar">
+            
+            <div class="tool">
+                <label for="color">
+                    Color
+                </label>
+                <input
+                    type="color"
+                    id="color"
+                    value="#000000"
+                >
+            </div>
+            <!-- Brush Size -->
+            <div class="tool">
+                <label for="brushSize">
+                    Brush Size
+                </label>
+                <input
+                    type="range"
+                    id="brushSize"
+                    min="1"
+                    max="50"
+                    value="5"
+                >
+                <span id="sizeValue">
+                    5px
+                </span>
+            </div>
+            <!-- Clear Button -->
+            <button id="clearBtn">
+                Clear Canvas
+            </button>
+        </div>
+        <!-- Canvas -->
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

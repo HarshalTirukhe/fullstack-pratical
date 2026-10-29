@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f5f7;
+
+    color: #222;
+}
+
+.app {
+    min-height: 100vh;
+
+    padding: 40px 20px;
+}
+
+
+/* Header */
+
+header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #777;
+}
+
+
+/* Main */
+
+main {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* Cards */
+
+.form-card,
+.display-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2,
+.display-card h2 {
+    margin-bottom: 25px;
+}
+
+
+/* Form */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #333;
+}
+
+
+/* Button */
+
+button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+
+/* Student Information */
+
+.student-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.info-row span {
+    color: #666;
+
+    text-align: right;
+}
+
+
+/* Empty State */
+
+.empty {
+    color: #777;
+}
+
+.empty p {
+    line-height: 1.6;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+}

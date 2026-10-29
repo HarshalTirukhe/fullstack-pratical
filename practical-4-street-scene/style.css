@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #87ceeb;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to bottom, #4fa8d8, #b9e6f8);
+}
+/* =========================
+   SUN
+========================= */
+.sun {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffd54f;
+  box-shadow: 0 0 40px rgba(255, 213, 79, 0.8);
+}
+/* =========================
+   CLOUDS
+========================= */
+.cloud {
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  opacity: 0.8;
+}
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+}
+.cloud::before {
+  width: 55px;
+  height: 55px;
+  left: 20px;
+  bottom: 10px;
+}
+.cloud::after {
+  width: 70px;
+  height: 70px;
+  right: 20px;
+  bottom: 5px;
+}
+.cloud-1 {
+  top: 100px;
+  left: 12%;
+}
+.cloud-2 {
+  top: 180px;
+  left: 45%;
+  transform: scale(0.7);
+}
+/* =========================
+   ROAD
+========================= */
+.road {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #333;
+}
+/* =========================
+   ROAD LINES
+========================= */
+.road-line {
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 8px;
+  background-color: white;
+}
+.line-1 {
+  left: 5%;
+}
+.line-2 {
+  left: 35%;
+}
+.line-3 {
+  left: 65%;
+}
+.line-4 {
+  left: 95%;
+}
+/* =========================
+   TRAFFIC SIGNAL
+========================= */
+.traffic-signal {
+  position: absolute;
+  z-index: 20;
+  left: 18%;
+  bottom: 40%;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Signal box */
+.signal-box {
+  width: 80px;
+  height: 200px;
+  padding: 12px;
+  background-color: #222;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+/* Individual lights */
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #444;
+}
+/* Traffic light animation */
+.red {
+  animation: redLight 9s infinite;
+}
+.yellow {
+  animation: yellowLight 9s infinite;
+}
+.green {
+  animation: greenLight 9s infinite;
+}
+/* =========================
+   TRAFFIC LIGHT ANIMATION
+========================= */
+@keyframes redLight {
+  0%,
+  55% {
+    background-color: #ff2222;
+    box-shadow: 0 0 25px #ff2222;
+  }
+  56%,
+  100% {
+    background-color: #444;
+    box-shadow: none;
+  }
+}
+@keyframes yellowLight {
+  0%,
+  55% {
+    background-color: #444;
+    box-shadow: none;
+  }
+  56%,
+  66% {
+    background-color: #ffd600;
+    box-shadow: 0 0 25px #ffd600;
+  }
+  67%,
+  100% {
+    background-color: #444;
+    box-shadow: none;
+  }
+}
+@keyframes greenLight {
+  0%,
+  66% {
+    background-color: #444;
+    box-shadow: none;
+  }
+  67%,
+  100% {
+    background-color: #22cc55;
+    box-shadow: 0 0 25px #22cc55;
+  }
+}
+/* Signal pole */
+.signal-pole {
+  width: 12px;
+  height: 180px;
+  background-color: #222;
+}
+/* Signal base */
+.signal-base {
+  width: 70px;
+  height: 15px;
+  background-color: #222;
+  border-radius: 5px;
+}
+/* =========================
+   CAR
+========================= */
+.car {
+  position: absolute;
+  left: -180px;
+  bottom: 42%;
+  width: 180px;
+  height: 90px;
+  z-index: 10;
+  animation: carMove 9s infinite linear;
+}
+/* Car body */
+.car-body {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 180px;
+  height: 55px;
+  border-radius: 15px 25px 10px 10px;
+  background-color: #e53935;
+  border: 3px solid #b71c1c;
+}
+/* Car roof */
+.car-body::before {
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: -35px;
+  width: 95px;
+  height: 40px;
+  background-color: #e53935;
+  border: 3px solid #b71c1c;
+  border-bottom: none;
+  border-radius: 45px 45px 0 0;
+}
+/* Windows */
+.car-window {
+  position: absolute;
+  top: -25px;
+  width: 40px;
+  height: 25px;
+  background-color: #8ed6f8;
+  border: 2px solid #222;
+}
+.window-1 {
+  left: 45px;
+  border-radius: 20px 0 0 0;
+}
+.window-2 {
+  left: 90px;
+  border-radius: 0 20px 0 0;
+}
+/* Headlight */
+.headlight {
+  position: absolute;
+  right: -2px;
+  top: 20px;
+  width: 10px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 0 10px white;
+}
+/* Wheels */
+.wheel {
+  position: absolute;
+  bottom: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #111;
+  border: 7px solid #555;
+}
+.wheel-1 {
+  left: 25px;
+}
+.wheel-2 {
+  right: 25px;
+}
+/* =========================
+   CAR ANIMATION
+========================= */
+@keyframes carMove {
+  0% {
+    left: -180px;
+  }
+  10% {
+    left: -180px;
+  }
+  55% {
+    left: -180px;
+  }
+  66% {
+    left: -180px;
+  }
+  67% {
+    left: -180px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+/* =========================
+   GROUND
+========================= */
+.ground {
+  position: absolute;
+  left: 0;
+  bottom: 40%;
+  width: 100%;
+  height: 15px;
+  background-color: #6aa84f;
+  z-index: 5;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 700px) {
+  .traffic-signal {
+    left: 8%;
+  }
+  .sun {
+    right: 40px;
+  }
+  .car {
+    transform: scale(0.8);
+  }
+}

@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f2f2f2;
+
+    padding: 20px;
+}
+
+
+/* Calculator */
+
+.calculator {
+    width: 340px;
+
+    background: #222;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.calculator h1 {
+    color: white;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Display */
+
+.display {
+    width: 100%;
+
+    min-height: 75px;
+
+    background: #111;
+
+    color: white;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    font-size: 30px;
+
+    overflow-x: auto;
+}
+
+
+/* Buttons */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #444;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #555;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* Operators */
+
+.operator {
+    background: #666;
+}
+
+.operator:hover {
+    background: #777;
+}
+
+
+/* Clear */
+
+.clear {
+    background: #b33;
+}
+
+.clear:hover {
+    background: #c44;
+}
+
+
+/* Delete */
+
+.delete {
+    background: #555;
+}
+
+
+/* Equals */
+
+.equals {
+    background: #333;
+
+    grid-row: span 2;
+}
+
+.equals:hover {
+    background: #444;
+}
+
+
+/* Zero */
+
+.zero {
+    grid-column: span 2;
+}
